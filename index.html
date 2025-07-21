@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Skills section styles */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0 0;
+}
+.skills-list li {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 24px;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.skills-list li:hover {
+    background: #60a5fa;
+    color: #1e40af;
+    transform: scale(1.07);
+}
+section {
+section#contact {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 32px 32px;
+    background: rgba(219,234,254,0.95);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.04);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+}
+@media (max-width: 1000px) {
+    section#contact {
+        max-width: 98vw;
+        padding: 18px 2vw;
+    }
+}
+@media (max-width: 700px) {
+    section#contact {
+        padding: 18px 12px;
+    }
+}
+    scroll-margin-top: 80px;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+    padding: 0;
+    margin-left: 12px;
+    transition: background 0.2s;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.hamburger .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.5s linear;
+    background: rgba(96, 165, 250, 0.4);
+    pointer-events: none;
+    z-index: 300;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+.hamburger:focus {
+    outline: 2px solid #2563eb;
+    background: #dbeafe;
+}
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #2563eb;
+    margin: 6px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+}
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #f76b1c;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(120deg, #dbeafe 0%, #60a5fa 100%);
+    color: #1e293b;
+}
+
+p {
+    font-size: 14px;
+}
+
+.top-navbar {
+    width: 100%;
+    background: linear-gradient(90deg, aliceblue 0%, #a5d8ff 50%, #60a5fa 100%);
+    box-shadow: 0 2px 12px rgba(37,99,235,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 64px;
+}
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #60a5fa;
+    letter-spacing: 2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #dbeafe;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover, .nav-links a:focus {
+    background: #60a5fa;
+    color: #1e40af;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    padding: 0 24px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+.hero-section h1 {
+    font-size: 2.0rem;
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.hero-section p {
+    font-size: 1.0rem;
+    color: #334155;
+}
+
+section {
+    background: rgba(219,234,254,0.95);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.04);
+    padding: 32px 32px;
+    margin: 32px 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+}
+
+.section-animate {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+
+h2 {
+    color: #2563eb;
+    margin-bottom: 18px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+.project {
+    flex: 1 1 250px;
+    background: #e0e7ff;
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 6px rgba(37,99,235,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 350px;
+}
+.project:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(37,99,235,0.15);
+}
+
+@media (max-width: 700px) {
+    .nav-container {
+        flex-direction: row;
+        height: 56px;
+        padding: 0 8px;
+        position: relative;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .hamburger {
+        display: flex;
+        align-items: center;
+    }
+    .nav-links {
+        position: absolute;
+        top: 56px;
+        right: 0;
+        background: #1e40af;
+        flex-direction: column;
+        width: 180px;
+        box-shadow: 0 4px 16px rgba(37,99,235,0.10);
+        border-radius: 0 0 12px 12px;
+        gap: 0;
+        display: none;
+        padding: 8px 0;
+        z-index: 150;
+        transition: transform 0.3s, opacity 0.3s;
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    .nav-links.open {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-radius: 0;
+        border-bottom: 1px solid #60a5fa;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        color: #dbeafe;
+    }
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    main {
+        padding: 0 4px;
+    }
+    .project-list {
+        flex-direction: column;
+        gap: 16px;
+    }
+    section {
+        padding: 18px 12px;
+    }
+
+}
+.github-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 22px;
+    background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 22px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.github-btn:hover {
+    background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+/* Contact section styles */
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e0e7ff;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(37,99,235,0.08);
+    justify-content: space-between;
+    align-items: stretch;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    font-size: 1.08rem;
+    border-right: 1px solid #c7d2fe;
+    min-width: 220px;
+    flex: 1 1 74px;
+}
+@media (max-width: 1000px) {
+    .contact-list {
+        width: 100%;
+        padding: 0;
+    }
+    .contact-item {
+        min-width: 180px;
+        flex: 1 1 74px;
+        padding: 8px 8px;
+    }
+}
+.contact-item:last-child {
+    border-right: none;
+}
+@media (max-width: 700px) {
+    .contact-list {
+        flex-direction: column;
+        gap: 1px;
+        background: #e0e7ff;
+        box-shadow: 0 1px 6px rgba(37,99,235,0.08);
+        border-radius: 12px;
+        width: 100%;
+        padding: 0;
+    }
+    .contact-item {
+        border-right: none;
+        border-bottom: 1px solid #c7d2fe;
+        /* padding: 14px 8px; */
+        min-width: 0;
+        flex: 1 1 100%;
+    }
+    .contact-item:last-child {
+        border-bottom: none;
+    }
+}
+.contact-icon {
+    font-size: 1.4rem;
+    color: #2563eb;
+}
+.contact-label {
+    font-weight: 600;
+    color: #2563eb;
+    min-width: 70px;
+}
+.contact-item a {
+    color: #1e40af;
+    text-decoration: underline;
+        /* padding: 8px 8px; */
+    word-break: break-all;
+}
+.contact-item a:hover {
+    color: #2563eb;
+}
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e0e7ff;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(37,99,235,0.08);
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    font-size: 1.08rem;
+    border-bottom: 1px solid #c7d2fe;
+    width: 100%;
+    box-sizing: border-box;
+    height: 20px;
+}
+.contact-item:last-child {
+    border-bottom: none;
+}
+.anchorclass{
+    font-size:14px;
+}
+</style>
+<body>
+    <nav class="top-navbar">
+        <div class="nav-container">
+            <div class="logo">MyPortfolio</div>
+            <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="home" class="hero-section">
+            <h1>Welcome to My Portfolio</h1>
+            <img src="DSC_1619.JPG" alt="Profile photo" style="width:140px; height:140px; object-fit:cover; border-radius:50%; box-shadow:0 2px 12px rgba(37,99,235,0.10); margin-bottom:16px;">
+        </section>
+        <section id="contact">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm Bipin Rawat, a Computer Science graduate from Veer Madho Singh Bhandari Uttarakhand Technical University. I specialize in front-end development using React.js and Tailwind CSS, with hands-on experience in building full-stack applications using Django and Python. My key interests lie in UI/UX design, database management, and web security. I’ve worked on impactful projects like an Online Assessment System and StegoShield—an image encryption and detection tool. I also completed a 6-month internship in computational thinking, applying Python and Micro:bit to real-world challenges. I’m passionate about solving problems through clean and user-friendly design.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>React JS</li>
+                <li>Python</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Django</li>
+                <li>Tailwind</li>
+                <li>Bootstrap</li>
+                <li>Material UI</li>
+                <li>GitHub</li>
+                <li>Copilot</li>
+                <li>SQLite</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project">
+                    <h3>Online Quiz Assessment</h3>
+                    <p>An interactive web application for conducting online quizzes and assessments. Developed using <strong>Python</strong>, <strong>Django</strong>, <strong>HTML</strong>, <strong>CSS</strong>, and <strong>SQLite</strong>. Features include user authentication, quiz creation, automatic grading, and result analytics.</p>
+                    <a href="https://github.com/Bipi-Rawat/Campus-Assesment" class="github-btn" target="_blank">View GitHub</a>
+                </div>
+                <div class="project">
+                    <h3>StagoShield Encryption</h3>
+                    <p>A secure encryption and steganography tool for protecting sensitive data. Developed using <strong>NumPy</strong>, <strong>Python</strong>, <strong>HTML</strong>, <strong>CSS</strong>, and <strong>SQLite</strong>. Features include data encryption, image-based steganography, and a user-friendly web interface.</p>
+                    <a href="https://github.com/Bipi-Rawat/Stagoshield_bipin" class="github-btn" target="_blank">View GitHub</a>
+                </div>
+                <div class="project">
+                    <h3>Static Webpages Collection</h3>
+                    <p>Developed a series of visually appealing and responsive static webpages using <strong>HTML</strong>, <strong>CSS</strong>, <strong>Material UI (MUI)</strong>, <strong>React</strong>, and <strong>Bootstrap</strong>. These projects showcase modern layouts, component-based design, and cross-device compatibility.</p>
+                    <a href="#" class="github-btn" target="_blank">View GitHub</a>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-label">Mobile:</span>
+                    <span class="anchorclass"> +91 8476822728</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span class="contact-label">Email:</span>
+                    <span class="anchorclass">bipirawat85@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <span class="contact-label" >LinkedIn: </span> &nbsp;&nbsp;
+                    <a class="anchorclass" href="https://www.linkedin.com/in/bipin-rawat-1b1b1b1b1/" target="_blank">https://www.linkedin.com/in/bipin-rawat</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-label">Address:</span>&nbsp;&nbsp;
+                    <span class="anchorclass">Rudrapryag, Uttarakhand, India</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        function toggleMenu() {
+            navLinks.classList.toggle('open');
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !expanded);
+            // Prevent background scroll when menu is open
+            if (!expanded) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+        hamburger.addEventListener('click', function(e) {
+            // Ripple effect
+            const rect = hamburger.getBoundingClientRect();
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            ripple.style.left = (e.clientX - rect.left) + 'px';
+            ripple.style.top = (e.clientY - rect.top) + 'px';
+            ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+            hamburger.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 500);
+            toggleMenu();
+        });
+        // Close menu when a link is clicked (mobile UX)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Animated scroll to section and animate section
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        // Animate out
+                        target.classList.add('section-animate');
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            // Animate in
+                            setTimeout(() => {
+                                target.classList.remove('section-animate');
+                            }, 400);
+                        }, 100);
+                    }
+                }
+                if (window.innerWidth <= 700 && navLinks.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+        // Close menu on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 700) {
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
